@@ -1,76 +1,49 @@
 = provide(:title, "Homepage")
 
-h1 StaticPages#home
-p Find me in app/views/static_pages/home.html.erb
-
-
-
 .marketing
 
-    h1 Introducing Bootstrap.
+    h1 This is the Homepage
     p.marketing-byline Need reasons to love Bootstrap? Look no further.
 
     .row-fluid
       .span4
-        img [src="assets/img/bs-docs-twitter-github.png"]
-        
+        = image_tag("bs-docs-twitter-github.png", alt: "Twitter Github")
+
         h2 By nerds, for nerds.
 
-        p Built at Twitter by 
-        | a [href="http://twitter.com/mdo"]@mdo
-        | and 
-        | a [href="http://twitter.com/fat"]@fat 
-        | , Bootstrap utilizes 
-        | a [href="http://lesscss.org"]LESS CSS 
-        | , is compiled via 
-        | a [href="http://nodejs.org"]Node
-        | , and is managed through 
-        | a href="http://github.com"]GitHub
-        | to help nerds do awesome stuff on the web.
+        p Built at Twitter by #{link_to "@mdo", 'http://twitter.com/mdo'} and #{link_to "@fat", 'http://twitter.com/fat'} , Bootstrap utilizes a #{link_to "LESS CSS", 'http://lesscss.org'} , is compiled via #{link_to "Node", 'http://nodejs.org'} , and is managed through #{link_to "GitHub", 'http://github.com'} to help nerds do awesome stuff on the web.
       
 
       .span4
-        img [src="assets/img/bs-docs-responsive-illustrations.png]
+        = image_tag("bs-docs-responsive-illustrations.png", alt: "Responsive Illustration")  
+
         h2 Made for everyone.
-        p Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via 
-        | a [href="./scaffolding.html#responsive"]responsive CSS 
-        | as well.
+        p Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via #{link_to "responsive CSS", 'scaffolding.html#responsive'} as well.
 
       
       .span4
-        img [src="assets/img/bs-docs-bootstrap-features.png"]
+        = image_tag("bs-docs-bootstrap-features.png", alt: "Bootstrap Features")  
+
         h2 Packed with features.
-        p A 12-column responsive 
-        | a [href="./scaffolding.html#grid"]grid
-        | , dozens of components, 
-        | a [href="./javascript.html"]javascript plugins
-        | , typography, form controls, and even a a [href="./customize.html"]web-based Customizer
-        | to make Bootstrap your own.
+        p A 12-column responsive #{link_to "grid", './scaffolding.html#grid'} , dozens of components, #{link_to "javascript plugins", './javascript.html'} , typography, form controls, and even a #{link_to "web-based Customizer", 'customize.html'} to make Bootstrap your own.
       
     
 
     hr.soften
 
     h1 Built with Bootstrap.
-    p.marketing-byline For even more sites built with Bootstrap, 
-    | a [href="http://builtwithbootstrap.tumblr.com/"] [target="_blank"]visit the unofficial Tumblr
-    | or a [href="./getting-started.html#examples"]browse the examples
-    | .
+    p.marketing-byline For even more sites built with Bootstrap, #{link_to "visit the unofficial Tumblr", 'http://builtwithbootstrap.tumblr.com/'} or #{link_to "browse the examples", "getting-started.html#examples"}.
 
     .row-fluid
       ul[class="thumbnails example-sites"]
         li.span3
-          a.thumbnail(href="http://soundready.fm/" target="_blank")
-          img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm"
-          
-        li.span3
-          a.thumbnail href="http://kippt.com/" target="_blank"
-          img src="assets/img/example-sites/kippt.png" alt="Kippt"
+          = link_to image_tag("example-sites/soundready.png", alt: "SoundReady.fm"), "http://soundready.fm/" , target: "_blank"
 
         li.span3
-          a.thumbnail href="http://www.fleetio.com/" target="_blank"
-          img src="assets/img/example-sites/fleetio.png" alt="Fleetio"
+          = link_to image_tag("example-sites/kippt.png", alt: "Kippt"), "http://kippt.com/", target: "_blank"
 
         li.span3
-          a.thumbnail href="http://www.jshint.com/" target="_blank"
-          img src="assets/img/example-sites/jshint.png" alt="JS Hint"
+          = link_to image_tag("example-sites/fleetio.png",alt:"Fleetio"),"http://www.fleetio.com/",target:"_blank"
+
+        li.span3
+          = link_to image_tag("example-sites/jshint.png",alt:"JS Hint"),"http://www.jshint.com/",target:"_blank"

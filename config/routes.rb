@@ -1,4 +1,6 @@
 BootSlim::Application.routes.draw do
+  get "fluid_pages/fluid"
+
   get "static_pages/home"
 
   get "static_pages/about"
